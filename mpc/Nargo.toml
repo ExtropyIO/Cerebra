@@ -1,0 +1,6 @@
+[package]
+name = "mpc"
+type = "bin"
+authors = [""]
+
+[dependencies]
