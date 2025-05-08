@@ -1,0 +1,27 @@
+[compiler]
+allow_leaky_loops = false
+link_library = ["lib"]
+
+[vm]
+allow_leaky_logs = false
+
+[network]
+my_id = 0
+bind_addr = "127.0.0.1:8080"
+key_path = "/cerebra/mpc-node/keys/party0_key.der"
+
+[[network.parties]]
+id = 0
+# normally we would use DNS name here such as localhost, but localhost under windows is resolved to ::1, which causes problems since we bind to ipv4 above
+dns_name = "127.0.0.1:8080"
+cert_path = "/cerebra/mpc-node/keys/party0_cert.der"
+
+[[network.parties]]
+id = 1
+dns_name = "127.0.0.1:8081"
+cert_path = "/cerebra/mpc-node/keys/party1_cert.der"
+
+[[network.parties]]
+id = 2
+dns_name = "127.0.0.1:8082"
+cert_path = "/cerebra/mpc-node/keys/party2_cert.der"
