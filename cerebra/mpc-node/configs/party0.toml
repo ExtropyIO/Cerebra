@@ -16,14 +16,14 @@ key_path = "../keys/party0_pkcs8.der"
 id = 0
 # normally we would use DNS name here such as localhost, but localhost under windows is resolved to ::1, which causes problems since we bind to ipv4 above
 dns_name = "127.0.0.1:8080"
-cert_path = "../keys/party0_pkcs8.der"
+cert_path = "../keys/party0_cert.der"
 
 [[network.parties]]
 id = 1
 dns_name = "127.0.0.1:8081"
-cert_path = "../keys/party1_pkcs8.der"
+cert_path = "../keys/party1_cert.der"
 
 [[network.parties]]
 id = 2
 dns_name = "127.0.0.1:8082"
-cert_path = "/cerebra/mpc-node/keys/party2_pkcs8.der"
+cert_path = "/cerebra/mpc-node/keys/party2_cert.der"
