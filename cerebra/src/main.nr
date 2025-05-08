@@ -4,11 +4,14 @@ use dep::std::hash::poseidon;
 //     data: Field,
 // }
 
-fn main(x: Field, y: Field) -> pub Field {
-    poseidon::bn254::hash_2([x, y])
+fn main(x: Field, y: Field) {
+    assert(x == y);
+
+    // comment out for now. hash is for mpc only
+    // poseidon::bn254::hash_2([x, y])
 }
 
 #[test]
 fn test_main() {
-    main(1, 2);
+    main(1, 1);
 }
