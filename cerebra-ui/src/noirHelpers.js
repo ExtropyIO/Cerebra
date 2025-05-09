@@ -29,14 +29,10 @@ export async function analyzeDataWithNoir(datasetUrl) {
     // that our Noir contract expects
 
     const inputForCircuit = prepareInputForNoirCircuit(datasetJson);
-    console.log('here 1');
 
     // Load and compile the Noir program
     // In a production app, you would pre-compile this
     const fm = createFileManager('/');
-
-    console.log('FM,', fm);
-    console.log('here 2');
 
     const main = (
       await fetch(new URL(`../../cerebra/src/main.nr`, import.meta.url))
@@ -48,12 +44,9 @@ export async function analyzeDataWithNoir(datasetUrl) {
     fm.writeFile('./Nargo.toml', nargoToml);
 
     const compiled = await compile(fm);
-    console.log('here 3');
 
     // Initialize the Barretenberg backend for Noir
-    const backend = new BarretenbergBackend(compiled);
-
-    console.log('here 4');
+    const backend = new BarretenbergBackend(compiled.program);
 
     // Create a new Noir instance with the compiled program and backend
     const noir = new Noir(compiled, backend);
