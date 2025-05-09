@@ -5,7 +5,6 @@ import { BarretenbergBackend } from '@noir-lang/backend_barretenberg';
 import { Noir } from '@noir-lang/noir_js';
 import {
   compile,
-  compile_contract,
   createFileManager,
 } from '@noir-lang/noir_wasm';
 import { ethers } from 'ethers';
