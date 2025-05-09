@@ -38,7 +38,16 @@ export async function analyzeDataWithNoir(datasetUrl) {
     console.log('FM,', fm);
     console.log('here 2');
 
-    const compiled = await compile_contract(fm);
+    const main = (
+      await fetch(new URL(`../../cerebra/src/main.nr`, import.meta.url))
+    ).body;
+    const nargoToml = (
+      await fetch(new URL(`../../cerebra/Nargo.toml`, import.meta.url))
+    ).body;
+    fm.writeFile('./src/main.nr', main);
+    fm.writeFile('./Nargo.toml', nargoToml);
+
+    const compiled = await compile(fm);
     console.log('here 3');
 
     // Initialize the Barretenberg backend for Noir
@@ -79,7 +88,6 @@ export async function analyzeDataWithNoir(datasetUrl) {
     };
   }
 }
-
 // Helper function to prepare dataset into the format expected by our Noir circuit
 function prepareInputForNoirCircuit(dataset) {
   // This function would transform your dataset into the exact format
