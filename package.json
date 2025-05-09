@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/ExtropyIO/Cerebra/issues"
   },
-  "homepage": "https://github.com/ExtropyIO/Cerebra#readme"
+  "homepage": "https://github.com/ExtropyIO/Cerebra#readme",
+  "dependencies": {
+    "@noir-lang/backend_barretenberg": "^0.36.0",
+    "@noir-lang/noir_js": "^1.0.0-beta.3",
+    "@noir-lang/noir_wasm": "^1.0.0-beta.3",
+    "ethers": "^6.14.0",
+    "lucide-react": "^0.508.0",
+    "react": "^19.1.0"
+  }
 }
