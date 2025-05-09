@@ -1,5 +1,3 @@
-// This is a more complete example of how to interact with Noir contracts
-// using the noir_js library
 
 import { BarretenbergBackend } from '@noir-lang/backend_barretenberg';
 import { Noir } from '@noir-lang/noir_js';
@@ -9,7 +7,7 @@ import {
 } from '@noir-lang/noir_wasm';
 import { ethers } from 'ethers';
 
-// This function would be called from your UI when the "Analyze" button is clicked
+// This is the entry point
 export async function analyzeDataWithNoir(datasetUrl) {
   try {
     // Fetch the dataset from the URL
@@ -30,7 +28,7 @@ export async function analyzeDataWithNoir(datasetUrl) {
     const inputForCircuit = prepareInputForNoirCircuit(datasetJson);
 
     // Load and compile the Noir program
-    // In a production app, you would pre-compile this
+
     const fm = createFileManager('/');
 
     const main = (
